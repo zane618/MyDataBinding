@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="preseneter"
+            type="com.example.mydatabinding.DataBindingActivity.Presenter" />
+
+        <variable
+            name="user"
+            type="com.example.mydatabinding.bean.User" />
+        <variable
+            name="user2"
+            type="com.example.mydatabinding.bean.User2" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DataBindingActivity">
+
+        <EditText
+            android:id="@+id/edit_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{user.name}"
+            android:hint=""/>
+
+        <EditText
+            android:id="@+id/edit_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_1"
+            android:afterTextChanged="@{preseneter.afterfdaf}"
+            android:hint="@{user.sex}"/>
+
+        <Button
+            android:id="@+id/button_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onLongClick="@{preseneter.onLongClick11}"
+            android:onClick="@{preseneter.onCLick}"
+            android:layout_alignParentBottom="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/button_1"
+            android:onClick="@{() -> preseneter.onCLickToastAge(user)}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/button_1"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/xxx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="skdfjdkfj"
+                android:text="@{user2.name}"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</layout>
