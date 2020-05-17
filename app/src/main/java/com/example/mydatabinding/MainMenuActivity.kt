@@ -8,6 +8,7 @@ import android.widget.Switch
 import androidx.databinding.DataBindingUtil
 import com.example.mydatabinding.databinding.ActivityMainMenuBinding
 import com.example.mydatabinding.lifecycle.ViewModelActivity
+import com.example.mydatabinding.lifecycle.ViewModel_Databinding_Activity
 
 class MainMenuActivity : AppCompatActivity(), View.OnClickListener{
 
@@ -31,7 +32,7 @@ class MainMenuActivity : AppCompatActivity(), View.OnClickListener{
                 startActivity(Intent(this, ViewModelActivity::class.java))
             }
             dataBinding.btn3 -> {
-                startActivity(Intent(this, ViewModelActivity::class.java))
+                startActivity(Intent(this, ViewModel_Databinding_Activity::class.java))
             }
         }
     }

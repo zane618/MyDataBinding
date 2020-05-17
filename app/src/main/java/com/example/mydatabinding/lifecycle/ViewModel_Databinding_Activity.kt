@@ -11,7 +11,7 @@ class ViewModel_Databinding_Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val userViewModel2 = ViewModelProviders.of(this).get(UserViewModel::class.java)
+        val userViewModel2 = ViewModelProviders.of(this).get(UserViewModel2::class.java)
         val binding = DataBindingUtil.setContentView<ActivityViewModelDatabindingBinding>(this, R.layout.activity_view_model__databinding_)
         binding.viewModel = userViewModel2
 
@@ -20,7 +20,19 @@ class ViewModel_Databinding_Activity : AppCompatActivity() {
 //        binding.setLifecycleOwner(this)
 
         binding.btVm.setOnClickListener{
-            userViewModel2.user.name = "李思"
+            i ++
+            if (i % 2 == 1) {
+                var user = User("丈八", 18, 1)
+                user = User("丈八", 18, 1)
+                userViewModel2.user.value = user
+                userViewModel2.student.value?.name = "学生"
+            } else {
+                var user = User("丈八2", 188, 11)
+                userViewModel2.user.value = user
+                userViewModel2.student.value!!.name= "大学生"
+            }
+
         }
     }
+    var i = 0
 }

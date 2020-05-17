@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.mydatabinding.lifecycle.UserViewModel" />
+            type="com.example.mydatabinding.lifecycle.UserViewModel2" />
     </data>
 
     <LinearLayout
@@ -25,6 +25,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{String.valueOf(viewModel.user.age)}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.student.name}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(viewModel.student.age)}" />
 
         <Button
             android:id="@+id/bt_vm"
